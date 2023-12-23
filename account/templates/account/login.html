@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'netflixclone/css/style.css' %}">
+{% endblock %}
+
+{% block title %} Giriş Yap {% endblock %}
+
+{% block content %}
+
+
+<div class="header-login">
+    <nav class="navbar bg-body-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'netflixclone/img/netflix-logo.png' %}" alt="Bootstrap" width="210px" height="85px">
+            </a>
+        </div>
+    </nav>
+    <!-- form login -->
+
+    <div class="login-container">
+        <div class="row justify-content-center mt-2">
+            <div class="col-md-10">
+                <h2 style="color: white;" class="mb-4">Oturum Aç</h2>
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                    {% if error %}
+                    <div class="alert alert-warning" role="alert">
+                        {{error}}
+                    </div>
+                    {% endif %}
+                    <div class="mb-3">
+                        <div class="form-floating flex-grow-1 me-2">
+                            <input type="username" class="form-control" id="floatingInput" placeholder="e-posta" name="username">
+                            <label for="floatingInput" class="text-secondary">E-posta veya telefon numarası</label>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="form-floating flex-grow-1 me-2">
+                            <input type="password" class="form-control" id="floatingInput" placeholder="parola" name="password">
+                            <label for="floatingInput" class="text-secondary">Parola</label>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 mb-3">
+                        <button type="submit" class="btn btn-danger btn-lg"><a
+                                style="text-decoration: none; color:white" href="">Oturum Aç</a></button>
+                    </div>
+
+                    <div class="mb-3 d-flex align-items-center">
+                        <div class="form-check me-auto">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label text-secondary" for="exampleCheck1">
+                                Beni hatırla
+                            </label>
+                        </div>
+                        <div class="help-text">
+                            <p class="m-0 text-secondary" style="font-size: 14px;">Yardım ister misiniz?</p>
+                        </div>
+                    </div>
+                    <p class="ac-oturum">Netflix'e katılmak ister misiniz? <a href="{% url 'index' %}">Şimdi
+                            kaydolun.</a></p>
+                    <p class="info-oturum">Oturum açma işlemi, robot olmadığınızı kanıtlamak için Google reCAPTCHA ile
+                        korunuyor.
+                        <![CDATA[<b>Daha fazla bilgi.</b>]]>
+                    </p>
+                </form>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- form login -->
+    <div class="login-footer">
+        <div class="container">
+            <div class="footer">
+                <p>Sorularınız mı var? 0850-390-7444 numaralı telefonu arayın</p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="">SSS</a></li>
+                            <li><a href="">Çerez Tercihleri</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="">Yardım Merkezi</a></li>
+                            <li><a href="">Kurumsal Bilgiler</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="">Kullanım Koşulları</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="">Gizlilik</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="select pt-4">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Türkçe</option>
+                        <option value="1">İngilizce</option>
+                    </select>
+                </div>
+                <div class="footer-text pt-2 pb-3">
+                    <p>Netflix Türkiye</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

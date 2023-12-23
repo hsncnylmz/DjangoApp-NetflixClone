@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'account/css/style.css' %}">
+{% endblock %}
+
+{% block title %} Giriş Yap {% endblock %}
+
+{% block content %}
+
+
+<div class="header-login">
+    <nav class="navbar bg-body-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'netflixclone/img/netflix-logo.png' %}" alt="Bootstrap" width="210px" height="85px">
+            </a>
+            {% if user.is_authenticated %}
+            <form method="post" action="{% url 'logout' %}" class="d-flex">
+                {% csrf_token %}
+                <button type="hidden" name="next" value="{% url 'logout' %}" class="btn btn-danger me-2"
+                    style="text-decoration: none; color: white;">
+                    Oturumu Kapat
+                </button>
+            </form>
+            {% else %}
+            <form class="d-flex">
+                <button class="btn btn-danger me-2" type="submit"><a
+                        style="text-decoration: none; color: white;"
+                        href="{% url 'login' %}">Oturum Aç</a></button>
+            </form>
+            {% endif %}
+        </div>
+    </nav>
+    <!-- form login -->
+
+    <div class="logout-container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card" >
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Çıkıyor musun?</h5>
+                        <p class="card-text">Aklında olsun, Netflix oturumunu her seferinde kapatmana gerek yok. Sadece paylaşılan veya ortak alanlarda kullanılan bir bilgisayar ile giriş yaptığında oturumunu kapatsan yeter</p>
+                        <p class="card-text">30 saniye içinde seni Netflix.com adresine yönlendireceğiz</p>
+                        <a href="{% url 'index' %}" class="btn btn-primary">Şimdi Git</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- form login -->
+    <div class="login-footer">
+        <div class="container">
+            <div class="footer">
+                <p>Sorularınız mı var? 0850-390-7444 numaralı telefonu arayın</p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="">SSS</a></li>
+                            <li><a href="">Çerez Tercihleri</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="">Yardım Merkezi</a></li>
+                            <li><a href="">Kurumsal Bilgiler</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="">Kullanım Koşulları</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li><a href="">Gizlilik</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="select pt-4">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Türkçe</option>
+                        <option value="1">İngilizce</option>
+                    </select>
+                </div>
+                <div class="footer-text pt-2 pb-3">
+                    <p>Netflix Türkiye</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

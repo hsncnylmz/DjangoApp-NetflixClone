@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}  
+    <link rel="stylesheet" href="{% static 'netflixclone/css/style.css' %}">
+{% endblock %}
+
+{% block title %} {{ id }} İçerik Detayları {% endblock %}
+{% block content %}
+
+    <h1>Latest-details:{{ id }}</h1>
+
+
+{% endblock %}
+
+{% block js_files %}
+<script src="{% static 'netflixclone/js/script.js' %}"></script>
+{% endblock %}

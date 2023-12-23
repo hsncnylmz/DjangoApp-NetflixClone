@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'netflixapp/css/style.css' %}">
+{% endblock %}
+
+{% block title %} Profile {{user.username}} {% endblock %}
+
+{% block content %}
+{% include "partials/_navbar.html" %}
+
+<div class="container mt-5" style="width: 55%;">
+    <h2>Hesap</h2>
+<hr>
+    <div class="row mt-3">
+        <div class="col-sm-3">
+            <h5>ÜYELİK VE ÖDEMELER</h5>
+            <button>Üyeliği İptal Et</button>
+        </div>
+        <div class="col-sm-5 text-start">
+            <p>{{user.username}}</p>
+            <p>Parola: ********</p>
+            <p>Telefon:</p>
+
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="#"><p>E-postayı değiştir</p></a>
+            <a href="#"><p>Parolayı değiştir</p></a>
+            <a href="#"><p>Telefon numarasını değiştir</p></a>
+            <a href="#"><p>Telefon numarasını doğrulayın</p></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-5 text-start border-top">
+
+            <p>MASTERCARD</p>
+            <p>•••• •••• •••• ••••</p>
+            <p>Sonraki faturalama tarihiniz: 12 Ocak 2024.</p>
+        </div>
+        <div class="col-sm-4 text-end border-top">
+            <a href="#"><p>Ödeme bilgilerini yönet</p></a>
+            <a href="#"><p>Yedek ödeme yöntemi ekle</p></a>
+            <a href="#"><p>Fatura ayrıntıları</p></a>
+
+        </div>
+    </div>
+
+
+<div class="row">
+    <div class="col-sm-3">
+
+    </div>
+    <div class="col-sm-5 text-start border-top">
+
+
+    </div>
+    <div class="col-sm-4 text-end border-top">
+
+        <a href="#"><p>Hediye kartı ya da promosyon kodunu kullan</p></a>
+        <a href="#"><p>Hediye kartı alabileceğiniz yerler</p></a>
+    </div>
+</div>
+
+<hr>
+    <div class="row mt-3">
+        <div class="col-sm-3">
+            <h5>PLAN AYRINTILARI</h5>
+        </div>
+        <div class="col-sm-5 text-start">
+            <p><b>Temel</b></p>
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="#"><p>Planı değiştir</p></a>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row mt-3">
+        <div class="col-sm-3">
+            <h5>GÜVENLİK VE GİZLİLİK</h5>
+        </div>
+        <div class="col-sm-5 text-start">
+            <p>Bu hesaba kimlerin erişebileceğini kontrol edin, en son kullanılan cihazları görüntüleyin ve daha fazlasını yapın.</p>
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="#"><p>Erişim izinlerini ve cihazları yönet</p></a>
+            <a href="#"><p>Tüm cihazlarda oturumu kapat</p></a>
+            <a href="#"><p>Kişisel bilgilerinizi indirin</p></a>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-3">
+        <div class="col-sm-3">
+            <h5>GÜVENLİK VE GİZLİLİK</h5>
+        </div>
+        <div class="col-sm-9 text-start">
+            <p>{{user.username}}</p>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row mt-3">
+        <div class="col-sm-3">
+            <h5>AYARLAR</h5>
+        </div>
+        <div class="col-sm-9 text-start">
+            <a href="#"><p>18+ İçeriklere Erişim PIN'i</p></a>
+            <a href="#"><p>Profil transferi özelliğini kapatYENİ</p></a>
+            <a href="#"><p>Teste katılım</p></a>
+            <a href="#"><p>İçerik indirilen cihazları yönet</p></a>
+        </div>
+    </div>
+
+</div>
+{% include "partials/_footer.html" %}
+{% endblock %}
+
+{% block js_files %}
+<script src="{% static 'netflixapp/js/script.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/popper.min.js"></script>
+{% endblock %}

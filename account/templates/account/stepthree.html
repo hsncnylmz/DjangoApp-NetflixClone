@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'netflixclone/css/registration.css' %}">
+{% endblock %}
+
+{% block title %} Hesabınızı oluşturalım {% endblock %}
+{% block content %}
+{% include "partial/_navbar.html" %}
+
+<div class="align-items-center justify-content-center d-flex" id="stepthree" style="margin: auto; margin-top: 5%; margin-bottom: 5%;">
+    <div class="card border-0" style="width: 20rem;">
+        <div class="d-flex justify-content-center align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="#FF0000" class="bi bi-check-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+            </svg>
+        </div>
+        
+        <div class="card-body">
+            <p class="card-text text-center" style="font-size: 9pt;">ADIM 2 / 3</p>
+            <h2 style="font-weight: bold;" class="text-center">Planınızı seçin.</h2>
+        </div>
+
+        <ul class="list-group list-group-horizontal">
+            <li style="font-size: 14pt;" class="list-group-item border-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#FF0000" class="bi bi-check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg></li>
+        
+            <li style="font-size: 14pt;" class="list-group-item border-0">Taahhüt yok, istediğiniz zaman iptal edin.</li>
+        </ul>
+        
+        <ul class="list-group list-group-horizontal">
+            <li style="font-size: 14pt;" class="list-group-item border-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#FF0000" class="bi bi-check2" viewBox="0 0 16 16">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg></li>
+            <li style="font-size: 14pt;" class="list-group-item border-0">Tek ve düşük bir ücretle, Netflix'teki her şey önünüzde.</li></ul>
+        
+        <ul class="list-group list-group-horizontal">
+            <li style="font-size: 14pt;" class="list-group-item border-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="#FF0000" class="bi bi-check2" viewBox="0 0 16 16">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg></li>
+            <li style="font-size: 14pt;" class="list-group-item border-0">Tüm cihazlarınızda sınırsız izleme imkânı.</li></ul>
+        
+        <div class="d-grid gap-2 mt-3">
+            <a href="{% url "stepfour" %}" class="btn btn-danger btn-lg">İleri</a>
+        </div>
+    </div>
+</div>
+
+{% include "partial/_footer.html" %}
+{% endblock %}
+{% block js_files %}
+    <script src="{% static 'account/js/registration.js' %}"></script>
+{% endblock %}
